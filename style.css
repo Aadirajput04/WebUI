@@ -1,41 +1,35 @@
- *{
- margin: 0;
- padding: 0;
- font-family: sans-serif;
- 
-}
+ * {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif
+ }
 
+ :root {
+    --dark-black: black;
+    --light-green: #BCD9D7;
+    --dark-green: #3A595C;
+    --white: white;
 
-    .hero{
-        width: 100%;
-        
-}
- .row{
-    width: 90%;
+ }
+
+ .parent-container {
+    display: grid;
+    grid-template-columns: 40% 60%;
     height: 100vh;
-    margin: auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-
- }
- .col{
-    flex-basis: 45%;
-           
- }
- .slider{
-    height: 80vh;
-    display: flex;
  }
 
- .product img{
-    height: 19vh;
-    margin-bottom: 9px;
-    cursor: pointer;
- }
- .preview img{
-    height: 100%;
-
+ .parent-container .right{
+   background-color: var(--light-green);
+   padding: 50px;
  }
 
+ .parent-container .stock{
+   background-color: var(--dark-green);
+   padding: 4px 16px;
+   color: var(--white);
+ }
+
+ .parent-container h1{
+   margin: 16px 0;
+   font-family: Times;
+   font-size: 40px;
+ }
