@@ -4,10 +4,14 @@
  }
 
  :root {
-    --dark-black: black;
+    --dark-black: #000000;
     --light-green: #BCD9D7;
     --dark-green: #3A595C;
-    --white: white;
+    --white: #ffffff;
+    --brown: #B76E79;
+    --yellow: #FFDF00;
+    --black-300: #63636359;
+
 
  }
 
@@ -17,19 +21,277 @@
     height: 100vh;
  }
 
- .parent-container .right{
-   background-color: var(--light-green);
-   padding: 50px;
+ .parent-container .right {
+    background-color: var(--light-green);
+    padding: 50px;
  }
 
- .parent-container .stock{
+ .parent-container .stock {
+    background-color: var(--dark-green);
+    padding: 4px 16px;
+    color: var(--white);
+ }
+
+ .parent-container h1 {
+    margin: 16px 0;
+    font-family: Times;
+    font-size: 40px;
+ }
+
+ .parent-container p {
+    margin-bottom: 40px;
+ }
+
+
+ .radio-parent {
+   margin-top: 30px;
+    display: block;
+ }
+
+ .radio-parent b {
+    font-size: 14px;
+    display: block;
+    margin: 16px 0;
+
+ }
+
+ .radio-container {
+   position: relative;
+   cursor: pointer;
+   margin: 4px;
+   margin-left: 0;
+   width: 45px;
+   height: 45px;
+   -webkit-user-select: none;
+   -moz-user-select: none;
+   -ms-user-select: none;
+   user-select: none;
+   display: inline-block;
+   text-align: center;
+}
+
+/* hide browser default radio button */
+.radio-container input {
+   opacity: 0;
+   cursor: pointer;
+}
+
+/* custom radio button */
+.radio-container .checkmark {
+   left: 0;
+   top: 0;
+   position: absolute;
+   height: 45px;
+   width: 45px;
+   background-color: var(--white);
+   border-radius: 50%;
+   text-align: center;
+}
+
+.radio-container .text {
+   position: absolute;
+   text-align: center;
+   left: 50%;
+   top: 50%;
+   translate: -50% -50%;
+   font-size: 14px;
+   color: var(--dark-green);
+}
+
+
+/* On mouse-over, add a grey background color */
+.radio-container:hover input~.checkmark {
+   background-color: #ccc;
+}
+
+/* When the radio button is checked, add a blue background */
+.radio-container input:checked~.checkmark {
    background-color: var(--dark-green);
-   padding: 4px 16px;
-   color: var(--white);
- }
+}
 
- .parent-container h1{
-   margin: 16px 0;
+.radio-container input:checked~.text {
+   color: var(--white);
+}
+
+
+
+
+
+
+/*  for color radio button  */
+.color-brown{
+   background-color: var(--brown);
+}
+
+.color-white{
+   background-color: var(--white);
+}
+
+.color-yellow{
+   background-color: var(--yellow);
+}
+
+.radio-color-container {
+   position: relative;
+   cursor: pointer;
+   margin: 4px;
+   margin-left: 0;
+   width: 45px;
+   height: 45px;
+   -webkit-user-select: none;
+   -moz-user-select: none;
+   -ms-user-select: none;
+   user-select: none;
+   display: inline-block;
+}
+
+/* hide browser default radio button */
+.radio-color-container input {
+   opacity: 0;
+   cursor: pointer;
+}
+
+/* custom radio button */
+.radio-color-container .checkmark {
+   left: 50%;
+   top: 50%;
+   position: absolute;
+   height: 45px;
+   width: 45px;
+   border-radius: 50%;
+   translate: -50% -50%;
+ 
+}
+
+.radio-color-container .text {
+   position: absolute;
+   text-align: center;
+   left: 50%;
+   top: 50%;
+   width: 35px;
+   height: 35px;
+   translate: -50% -50%;
+   font-size: 14px;
+   border-radius: 50%;
+}
+
+
+/* On mouse-over, add a grey background color */
+.radio-color-container:hover input~.checkmark {
+   background-color: transparent;
+   border: 1px solid var(--dark-green);
+}
+
+/* When the radio button is checked, add a blue background */
+.radio-color-container input:checked~.checkmark {
+   border: 1px solid var(--dark-green);
+   background-color: transparent;
+}
+
+.card .radio-parent, .card{
+   display: inline-block !important;
+}
+
+.parent-container hr{
+   border: none;
+   border-top: 1px solid var(--black-300);
+   margin: 20px 0;
+}
+
+.card{
+   padding: 16px;
+   background-color: var(--white);
+   border-radius: 16px;
+   margin: 8px;
+   margin-left: 0;
+}
+
+.card b{
+   margin: 8px 0;
+}
+
+.card .radio-parent{
+   margin: 0;
+}
+
+.card .checkmark{
+   background-color: var(--light-green);
+}
+
+.price-area{
+   display: grid;
+   grid-template-columns: 2fr 3fr;
+   gap: 50px;
+   margin: 25px 0;
+}
+
+.price-area .current-price{
+   font-size: 50px;
    font-family: Times;
-   font-size: 40px;
- }
+}
+
+.price-area .old-price{
+   position: absolute;
+   font-size: 25px;
+   top: 0;
+   margin-left: 20px;
+   text-decoration: line-through;
+   font-family: Times;
+}
+
+.price-area div{
+   position: relative;
+}
+
+.price-area p{
+   margin: auto;
+   line-height: 1.5;
+   color: #80776D;
+}
+
+.price-area a{
+   color: var(--dark-black);
+   font-weight: 600;
+   position: relative;
+}
+
+.price-area a i{
+   position: absolute;
+   bottom: -3px;
+}
+
+.buy-area button{
+   border: none;
+   outline: none;
+   padding: 16px 24px;
+   border-radius: 50px;
+   margin-right: 16px;
+   font-weight: bold;
+}
+
+.round-outline{
+   border: 2px solid var(--dark-green) !important;
+   color: var(--dark-green) !important;
+   padding: 16px 0 !important;
+   background-color: transparent !important;
+}
+
+.round-outline img{
+   margin: 0 24px;
+   vertical-align: middle;
+}
+
+.green-fill{
+   background-color: var(--dark-green);
+   color: var(--white);
+}
+
+.white-fill{
+   background-color: var(--white);
+   color: var(--dark-green);
+   padding-left: 0;
+}
+
+.green-fill img, .white-fill img{
+   margin-right: 16px;
+}
